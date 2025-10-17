@@ -7,3 +7,10 @@
 
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
+
+import random
+number_to_guess = random.randint(1, 100)
+attempts = 10
+attempts_used = 0
+print("¡Bienvenido al juego de adivinar el número!")
+

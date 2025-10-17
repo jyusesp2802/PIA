@@ -3,3 +3,5 @@
 
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
+
+numbers_count = int(input("¿Cuántos números deseas introducir?: "))
