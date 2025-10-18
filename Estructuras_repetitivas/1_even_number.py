@@ -6,4 +6,10 @@
 num1 = int(input("Introduce el primer número entero: "))
 num2 = int(input("Introduce el segundo número entero: "))
 
+print(f"Números pares entre {num1} y {num2}:")
+
+for number in range(num2, num1 + 1 ):
+    if number % 2 == 0:
+     print(number)
+
 

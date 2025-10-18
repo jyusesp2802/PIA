@@ -8,4 +8,11 @@
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
 
+importe_prestamo = float(input("Introduce el importe del préstamo: "))
+tasa_interes_anual = float(input("Introduce la tasa de interés anual (en %): "))
+plazo_anos = int(input("Introduce el plazo de pago en años: "))
+
+tasa_interes_mensual = tasa_interes_anual / 100 / 12
+numero_pagos = plazo_anos * 12
+cuota_mensual = (importe_prestamo * tasa_interes_mensual) / (1 - (1 + tasa_interes_mensual) ** -numero_pagos)
 

@@ -9,3 +9,21 @@
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
 
+lower_limit = int(input("Por favor, introduzca el límite inferior del intervalo: "))
+upper_limit = int(input("Por favor, introduzca el límite superior del intervalo: "))
+
+
+while lower_limit >= upper_limit:
+    print("Error: El límite inferior debe ser menor que el límite superior.")
+    lower_limit = int(input("Por favor, introduzca el límite inferior del intervalo: "))
+    upper_limit = int(input("Por favor, introduzca el límite superior del intervalo: "))
+
+
+out = 0
+
+
+while True:
+    number = int(input("Introduce un número (0 para terminar): ")) #pedir números hasta que se introduzca 0
+    if number == 0:
+        break
+
