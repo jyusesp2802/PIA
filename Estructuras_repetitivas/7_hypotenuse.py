@@ -18,7 +18,10 @@ cuota_mensual = (importe_prestamo * tasa_interes_mensual) / (1 - (1 + tasa_inter
 
 print(f"\nLa cuota mensual de la hipoteca es: {cuota_mensual:.2f}€\n")
 print("Tabla de amortización:")
-print("Pago\tInterés Principal\tSaldo Restante")
+print("Pago\tInterés Principal\tSaldo Restante\t")
+
+
+
 
 
 

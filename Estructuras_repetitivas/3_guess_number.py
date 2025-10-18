@@ -16,7 +16,7 @@ attempts_used = 0
 
 print("¡Bienvenido al juego de adivinar el número!")
 
-while attempts > 0: #Mientras queden intentos
+while attempts > 0:
     user_guess = int(input("Introduce un número entre 1 y 100: "))
     attempts_used += 1
     attempts -= 1
@@ -25,8 +25,10 @@ while attempts > 0: #Mientras queden intentos
         print(f"El número a adivinar es mayor que {user_guess}. Te quedan {attempts} intentos.")
     elif user_guess > number_to_guess:
         print(f"El número a adivinar es menor que {user_guess}. Te quedan {attempts} intentos.")
-    else:
+    else :
         print(f"¡Felicidades! Has adivinado el número {number_to_guess} en {attempts_used} intentos.")
         break
 else:
     print(f"Lo siento, has agotado tus intentos. El número era {number_to_guess}.")
+
+

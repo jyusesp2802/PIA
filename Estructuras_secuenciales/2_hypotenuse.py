@@ -11,4 +11,4 @@ from math import sqrt
 hypotenuse = sqrt((leg1**2)+(leg2**2))
 
 
-print('La raiz cuadrada es',hypotenuse)
+print(f'La raiz cuadrada es\t{hypotenuse:.2f}')

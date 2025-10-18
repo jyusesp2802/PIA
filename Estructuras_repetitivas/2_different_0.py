@@ -10,14 +10,17 @@ zero = 0
 positive = 0
 negative = 0
 
-for count in range(numbers_count):
-    number = float(input(f"Introduce el número {count + 1}: "))
-    if number > 0:
+for n in range(numbers_count):
+    num = float(input(f"Introduce el número {n + 1}: "))
+    if num > 0:
         positive += 1
-    elif number < 0:
+    elif num < 0:
         negative += 1
     else:
         zero += 1
+
 print(f"Números mayores que 0: {positive}")
 print(f"Números menores que 0: {negative}")
 print(f"Números iguales a 0: {zero}")
+
+

@@ -22,5 +22,5 @@ preliminary_test = points_correct + points_wrong + points_blank
 
 final_test = (preliminary_test / answers) * 10
 
-print('La nota final es de:', final_test)
+print(f'La nota final es de:\t{final_test:.2f}')
 

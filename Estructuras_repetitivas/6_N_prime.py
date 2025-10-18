@@ -11,13 +11,12 @@ primes = []  # Lista para almacenar los números primos encontrados
 
 while count < n:
     is_prime = True
-    for i in range(2, int(num ** 0.5) + 1): # Comprueba si la raíz cuadrada es divisible
+    for i in range(2, int(num**0.5) + 1):
         if num % i == 0:
             is_prime = False
             break
     if is_prime:
-        primes.append(num) # Agrega el número primo a la lista
+        primes.append(num)
         count += 1
     num += 1
-
-print(f"Números primos encontrados hasta ahora: {primes}")
+print(f"Los primeros {n} números primos son: {primes}")
