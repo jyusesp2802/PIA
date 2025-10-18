@@ -7,7 +7,7 @@ n = int(input("Por favor, introduzca el valor de la cantidad de números primos 
 
 count = 0  # Contador de números primos encontrados
 num = 2    # Número actual a comprobar
-primes = []  # Lista para almacenar los números primos encontrados
+primes = [] # Lista para almacenar los números primos encontrados
 
 while count < n:
     is_prime = True
