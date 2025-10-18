@@ -18,12 +18,11 @@ while lower_limit >= upper_limit:
     lower_limit = int(input("Por favor, introduzca el límite inferior del intervalo: "))
     upper_limit = int(input("Por favor, introduzca el límite superior del intervalo: "))
 
-
-out = 0
-
+sum__interval = 0
+count_outside_interval = 0
+equal_to_limits = False
 
 while True:
-    number = int(input("Introduce un número (0 para terminar): ")) #pedir números hasta que se introduzca 0
+    number = int(input("Introduce un número (0 para terminar): "))
     if number == 0:
         break
-
