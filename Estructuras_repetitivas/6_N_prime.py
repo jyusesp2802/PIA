@@ -19,4 +19,5 @@ while count < n:
         primes.append(num)
         count += 1
     num += 1
+
 print(f"Los primeros {n} números primos son: {primes}")

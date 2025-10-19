@@ -6,17 +6,13 @@
 prime_number = int(input("Por favor, introduzca un número: "))
 
 
-while True:
-    if prime_number <2:
-        print("Error: El número debe ser mayor o igual a 2.")
-        prime_number = int(input("Por favor, introduzca un número: "))
+while prime_number > 2:
+    for i in range(2, int(prime_number**0.5) + 1):
+        if prime_number % i == 0:
+            print(f"El número {prime_number} no es primo.")
+            break
     else:
-        if prime_number >=2:
-            for i in range(2, int(prime_number**0.5) + 1):
-                if prime_number % i == 0:
-                    print(f"El número {prime_number} no es primo.")
-                    break
-            else:
-                print(f"El número {prime_number} es primo.")
-        break
-
+        print(f"El número {prime_number} es primo.")
+    break
+else:
+    print("Error: Debe introducir un número mayor que 2.")

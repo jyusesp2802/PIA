@@ -13,10 +13,20 @@
 lower_range = int(input("Introduce el límite inferior del intervalo: "))
 upper_range = int(input("Introduce el límite superior del intervalo: "))
 
+sum_range = 0
+out_range_count = 0
+equal_limit = False
+
 while lower_range >= upper_range:
     print("Error: El límite inferior debe ser menor que el límite superior.")
     lower_range = int(input("Introduce el límite inferior del intervalo: "))
     upper_range = int(input("Introduce el límite superior del intervalo: "))
+else:
+
+
+
+
+
 
 
 
