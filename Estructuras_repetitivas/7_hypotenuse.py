@@ -8,6 +8,8 @@
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
 
+print('Calculadora de hipoteca y tabla de amortización')
+
 importe_prestamo = float(input("Introduce el importe del préstamo: "))
 tasa_interes_anual = float(input("Introduce la tasa de interés anual (en %): "))
 plazo_anos = int(input("Introduce el plazo de pago en años: "))

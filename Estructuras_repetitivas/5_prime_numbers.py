@@ -3,6 +3,8 @@
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
 
+print('Este programa determina si un número es primo o no.')
+
 prime_number = int(input("Por favor, introduzca un número: "))
 
 

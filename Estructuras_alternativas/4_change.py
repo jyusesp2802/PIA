@@ -1,8 +1,8 @@
-#Escribir un programa que que calcule el desglose mínimo en billetes y monedas de una cantidad exacta de euros.
-#Hay billetes de 500, 200, 100, 50, 20, 10 y 5 € y monedas de 2 y 1 €.
+# Escribir un programa que que calcule el desglose mínimo en billetes y monedas de una cantidad exacta de euros.
+# Hay billetes de 500, 200, 100, 50, 20, 10 y 5 € y monedas de 2 y 1 €.
 
-#Autor:Jaime Yust
-#Fecha: 16/10/2025
+# Autor:Jaime Yust
+# Fecha: 16/10/2025
 
 amount = int(input("Introduce una cantidad exacta de euros: "))
 

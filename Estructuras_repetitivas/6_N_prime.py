@@ -3,6 +3,8 @@
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
 
+print('Este programa muestra los N primeros números primos.')
+
 n = int(input("Por favor, introduzca el valor de la cantidad de números primos que deseas: "))
 
 count = 0  # Contador de números primos encontrados

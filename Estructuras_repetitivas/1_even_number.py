@@ -3,6 +3,8 @@
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
 
+print('Este programa imprime todos los números pares entre dos números enteros que introduzcas.')
+
 num1 = int(input("Introduce el primer número entero: "))
 num2 = int(input("Introduce el segundo número entero: "))
 

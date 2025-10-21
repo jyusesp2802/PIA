@@ -8,6 +8,8 @@
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
 
+print('Este programa te permite adivinar un número entre 1 y 100.')
+
 import random
 number_to_guess = random.randint(1, 100)
 

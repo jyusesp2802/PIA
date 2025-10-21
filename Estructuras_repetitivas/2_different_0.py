@@ -4,6 +4,8 @@
 #Autor:Jaime Yust
 #Fecha: 16/10/2025
 
+print('Este programa cuenta cuántos números son mayores que 0, menores que 0 e iguales a 0.')
+
 numbers_count = int(input("¿Cuántos números deseas introducir?: "))
 
 zero = 0
