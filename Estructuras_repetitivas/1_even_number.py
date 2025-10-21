@@ -1,7 +1,9 @@
-#Escribir un programa que imprima todos los números pares entre dos números que se le pidan al usuario.
+"""
+Escribir un programa que imprima todos los números pares entre dos números que se le pidan al usuario.
 
-#Autor:Jaime Yust
-#Fecha: 16/10/2025
+Autor:Jaime Yust
+Fecha: 16/10/2025
+"""
 
 print('Este programa imprime todos los números pares entre dos números enteros que introduzcas.')
 

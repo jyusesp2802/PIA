@@ -1,8 +1,9 @@
-#Crea un programa que muestre en pantalla los N primeros número primos. El valor de N se pide por teclado al usuario/a.
+"""
+Crea un programa que muestre en pantalla los N primeros número primos. El valor de N se pide por teclado al usuario/a.
 
-#Autor:Jaime Yust
-#Fecha: 16/10/2025
-
+Autor:Jaime Yust
+Fecha: 16/10/2025
+"""
 print('Este programa muestra los N primeros números primos.')
 
 n = int(input("Por favor, introduzca el valor de la cantidad de números primos que deseas: "))
