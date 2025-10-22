@@ -26,10 +26,10 @@ while lower_range >= upper_range:
     lower_range = int(input("Introduce el límite inferior del intervalo: "))
     upper_range = int(input("Introduce el límite superior del intervalo: "))
 
-num = int(input("\nIntroduce un número (0, para salir): "))
+num = int(input("Introduce un número (0, para salir): "))
 
 while num != 0:
-    if lower_range < num < upper_range:  # Pertenece al intervalo (num>lim_inf and num<lim_sup en otro lenguaje)
+    if lower_range < num < upper_range:  # Pertenece al intervalo
         sum_range += num
     else:  # No pertenece al intervalo
         out_range_count += 1
@@ -38,8 +38,7 @@ while num != 0:
             equal_limit = True
     num = int(input("Introduce un número (0, para salir): "))
 
-# Resultados
-print("\nRESULTADOS:")
+
 print(f"La suma de los números dentro del intervalo es {sum_range}")
 print(f"La cantidad de números fuera del intervalo es {out_range_count}")
 if equal_limit:
