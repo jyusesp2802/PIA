@@ -7,3 +7,16 @@ Autor: Jaime Yust
 Fecha: 24/10/2025
 
 """
+
+numbers = []
+for i in range(5):
+    try:
+        num = int(input(f'Introduce el número {i + 1}: '))
+    except ValueError:
+        print("Error: Por favor, introduce un número entero válido.")
+        num = int(input(f'Introduce el número {i + 1}: '))
+
+    numbers.append(num)
+
+rotated_numbers = [numbers[-1]] + numbers[:-1]
+print('Lista rotada:', rotated_numbers)
