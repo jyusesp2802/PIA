@@ -2,7 +2,7 @@
 Crea una biblioteca de funciones numéricas que contenga las siguientes funciones.
 Recuerda que puedes usar unas dentro de otras si es necesario.
 
-Observa bien lo que hace cada función ya que, si las implementas en el orden adecuado,
+Observa bien lo que hace cada función, si las implementas en el orden adecuado,
 te puedes ahorrar mucho trabajo. Por ejemplo, la función is_palindromic() resulta trivial teniendo reverse()
 y la función next_prime() también es muy fácil de implementar teniendo is_prime().
 
@@ -25,8 +25,8 @@ Haz el programa de manera que al ejecutarse pruebe cada una de las funciones.
 
 Autor: Jaime Yust
 Fecha: 23/10/2025
-
 """
+
 def is_prime(n):
     if n <= 1:
         return False

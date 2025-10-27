@@ -9,7 +9,6 @@ Autor: Jaime Yust
 Fecha: 24/10/2025
 
 """
-
 import random
 
 number = []
