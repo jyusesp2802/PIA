@@ -78,7 +78,7 @@ def pedir_duracion(n):
         except ValueError:
             print("Por favor, introduce solo números enteros válidos.\n")
 
-# Uso del programa
+
 h1, m1, s1 = pedir_duracion("primera")
 h2, m2, s2 = pedir_duracion("segunda")
 
