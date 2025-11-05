@@ -22,3 +22,4 @@ while count < n:
     num += 1
 
 print(f"Los primeros {n} números primos son: {primes}")
+
