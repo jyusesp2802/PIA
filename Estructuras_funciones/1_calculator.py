@@ -44,9 +44,6 @@ def mostrar_menu():
     return opcion
 
 
-valores_introducidos = False
-value_a = None
-value_b = None
 
 while True:
     opcion = mostrar_menu()

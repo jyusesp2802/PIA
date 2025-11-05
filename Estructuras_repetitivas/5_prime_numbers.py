@@ -16,8 +16,8 @@ while prime_number > 2:
         if prime_number % i == 0:
             print(f"El número {prime_number} no es primo.")
             break
-    else:
-        print(f"El número {prime_number} es primo.")
+        else:
+            print(f"El número {prime_number} es primo.")
     break
 else:
     print("Error: Debe introducir un número mayor que 2.")

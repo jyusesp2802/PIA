@@ -8,9 +8,9 @@ print('Este programa muestra los N primeros números primos.')
 
 n = int(input("Por favor, introduzca el valor de la cantidad de números primos que deseas: "))
 
-count = 0  # Contador de números primos encontrados
-num = 2    # Número actual a comprobar
-primes = [] # Lista para almacenar los números primos encontrados
+count = 0
+num = 2
+primes = []
 
 while count < n:
     for prime in range(2, int(num**0.5) + 1):
