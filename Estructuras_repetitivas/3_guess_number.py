@@ -8,32 +8,35 @@ si se llega al limite de intentos te muestra el número que había generado.
 
 Autor:Jaime Yust
 Fecha: 16/10/2025
+
 """
 
 print('Este programa te permite adivinar un número entre 1 y 100.')
 
 import random
-number_to_guess = random.randint(1, 100)
 
+N1 = 1
+N2 = 100
 attempts = 10
 attempts_used = 0
+
+number_to_guess = random.randint(N1, N2)
 
 print("¡Bienvenido al juego de adivinar el número!")
 
 while attempts > 0:
     user_guess = int(input("Introduce un número entre 1 y 100: "))
-    attempts_used += 1
-
+    attempts_used += N1
     if user_guess < number_to_guess:
-        attempts -= 1
+        attempts -= N1
         print(f"El número a adivinar es mayor. Te quedan {attempts} intentos.")
     elif user_guess > number_to_guess:
-        attempts -= 1
+        attempts -= N1
         print(f"El número a adivinar es menor. Te quedan {attempts} intentos.")
     else:
-        print(f"¡Felicidades! Has adivinado el número {number_to_guess} en {attempts_used} intentos.")
+        print(f"Has adivinado el número {number_to_guess} en {attempts_used} intentos.")
         break
 else:
-    print(f"Lo siento, has agotado tus intentos. El número era {number_to_guess}.")
+    print(f"Has agotado tus intentos. El número era {number_to_guess}.")
 
 
