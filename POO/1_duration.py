@@ -19,22 +19,29 @@ Autor: Jaime Yust
 Fecha: 03/11/2025
 """
 
-class duration :
 
-    def __init__(self, hours=0, minutes=0, seconds=0):
+class Duration :
+
+    def __init__(self, hours = 0, minutes = 0, seconds = 0):
         self.__hours = hours
         self.__minutes = minutes
         self.__seconds = seconds
-        self.normalize()
+        self.__normalize()
 
-    def normalize(self):
-        total_seconds = self.__hours * 3600 + self.__minutes * 60 + self.__seconds
-        self.__hours = total_seconds // 3600
-        self.__minutes = (total_seconds % 3600) // 60
-        self.__seconds = total_seconds % 60
+    def __normalize(self):
+        # Normaliza la duración para que los minutos y segundos estén en su rango adecuado
 
-    def __str__(self):
-        return f"{self.hours}h {self.minutes}m {self.seconds}s"
+        seconds = self.total_seconds()
+        #Convertir todo a segundos
+
+        if seconds < 0:
+            raise ValueError("Duration no puede ser negativa")
+        self.__hours = seconds // 3600
+        self.__minutes = seconds % 3600 // 60
+        self.__seconds = seconds % 3600 % 60
+
+    def total_seconds(self):
+        return self.__hours * 3600 + self.__minutes * 60 + self.__seconds
 
     @property
     def hours(self):
@@ -48,71 +55,45 @@ class duration :
     def seconds(self):
         return self.__seconds
 
-    def total_seconds(self):
-        return self.__hours * 3600 + self.__minutes * 60 + self.__seconds
+    def __str__(self):
+        return f"{self.__hours}:{self.__minutes}:{self.__seconds}"
 
-    def sum (self, other):
-        total = self.total_seconds() + other.total_seconds()
-        return duration(0, 0, total)
+    def __add__(self, other):
+       if isinstance(other, Duration):
+           return Duration(self.__hours + other.hours, self.__minutes + other.minutes, self.__seconds + other.seconds)
+       else:
+           return Duration(self.__hours, self.__minutes, self.__seconds + other)
 
-    def difference (self, other):
-        total = abs(self.total_seconds() - other.total_seconds())
-        return duration(0, 0, total)
+    def __sub__(self, other):
+        if isinstance(other, Duration):
+            return Duration(self.__hours - other.hours, self.__minutes - other.minutes, self.__seconds - other.seconds)
+        else:
+            return Duration(self.__hours, self.__minutes, self.__seconds - other)
+
+    def __eq__(self, other):
+        return (self.__hours, self.__minutes, self.__seconds) == (other.hours, other.minutes, other.seconds)
+
+    def __ne__(self, other):
+        return not self == other
+
+    def __lt__(self, other):
+        return self.total_seconds() < other.total_seconds()
+
+    def __le__(self, other):
+        return self.total_seconds() <= other.total_seconds()
+
+    def __gt__(self, other):
+        return not self <= other
+
+    def __ge__(self, other):
+        return not self < other
 
 
 # Pedir duraciones al usuario
 
-def pedir_duracion(n):
-    while True:
-        try:
-            h = int(input(f"Horas {n} duración: "))
-            m = int(input(f"Minutos {n} duración: "))
-            s = int(input(f"Segundos {n} duración: "))
-
-            # Validación solo para negativos
-            if h < 0 or m < 0 or s < 0:
-                print("No se permiten valores negativos.\n")
-                continue
-
-            return h, m, s
-        except ValueError:
-            print("Por favor, introduce solo números enteros válidos.\n")
-
-
-h1, m1, s1 = pedir_duracion("primera")
-h2, m2, s2 = pedir_duracion("segunda")
-
-print(f"\nPrimera duración: {h1:02d}:{m1:02d}:{s1:02d}")
-print(f"Segunda duración: {h2:02d}:{m2:02d}:{s2:02d}")
 
 
 
-def menu():
-    print("1. Sumar duraciones")
-    print("2. Restar duraciones")
-    print("3. Salir")
-    choice = input("Opción: ")
-    return choice
 
-while True:
-    choice = menu()
-    if choice == '1':
-        print("Primera duración:")
-        d1 = duration(h1, m1, s1)
-        print("Segunda duración:")
-        d2 = duration(h2, m2, s2)
-        result = d1.sum(d2)
-        print("Resultado de la suma:", result)
-    elif choice == '2':
-        print("Primera duración:")
-        d1 = duration(h1, m1, s1)
-        print("Segunda duración:")
-        d2 = duration(h2, m2, s2)
-        result = d1.difference(d2)
-        print("Resultado de la resta:", result)
-    elif choice == '3':
-        break
-    else:
-        print("Opción no válida.")
 
 
