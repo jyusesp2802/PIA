@@ -23,5 +23,9 @@ class Fraction :
             raise ValueError("Denominator cannot be zero.")
         self.__numerator = numerator
         self.__denominator = denominator
+        self._reduce()
+
+
+
 
 

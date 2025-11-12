@@ -88,10 +88,7 @@ class Duration :
     def __ge__(self, other):
         return not self < other
 
-
 # Pedir duraciones al usuario
-
-
 
 
 
