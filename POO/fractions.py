@@ -16,14 +16,36 @@ Fecha: 03/11/2025
 
 """
 
+from __future__ import annotations
+import math
+from typeguard import typechecked
+
+@typechecked
 class Fraction :
 
-    def __init__(self, numerator, denominator):
-        if denominator == 0:
+    def __init__(self, num, den):
+        if den == 0:
             raise ValueError("Denominator cannot be zero.")
-        self.__numerator = numerator
-        self.__denominator = denominator
-        self._reduce()
+        mcd = math.gcd(num, den)
+        self.__num = num // mcd
+        self.__den = den // mcd
+
+    @property
+    def num(self):
+        return self.__num
+
+    @property
+    def den(self):
+        return self.__den
+
+    def __str__(self):
+        return f"{self.__num}/{self.__den}"
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.__num, self.__den})"
+
+    def result(self):
+        return self.__num / self.__den
 
 
 
