@@ -22,13 +22,13 @@ import math
 @typechecked
 class Fraction :
 
-    def __init__(self, num, den):
+    def __init__(self, num: int, den: int):
         if den == 0:
             raise ZeroDivisionError("Denominator cannot be zero.")
         # Simplificar la fracción
         gcd = math.gcd(num, den)
-        self.__num = num // mcd
-        self.__den = den // mcd
+        self.__num = num // gcd
+        self.__den = den // gcd
 
     @property
     def num(self):
@@ -67,6 +67,9 @@ class Fraction :
 
     def __rsub__(self, other):
         return -self + other
+
+    def __truediv__(self, other: Fraction):
+        return Fraction(self.__num * other.__den, self.__den * other.__num)
 
     def __eq__(self, other: Fraction):
         return (self.__num, self.__den) == (other.__num, other.__den)
