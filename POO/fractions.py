@@ -45,8 +45,6 @@ class Fraction :
     def __repr__(self):
         return f"{self.__class__.__name__}({self.__num, self.__den})"
 
-    def result(self):
-        return self.__num / self.__den
 
     def __mul__(self, other: (int, Fraction)):
         if isinstance(other, int):

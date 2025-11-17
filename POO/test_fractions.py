@@ -9,8 +9,7 @@ print(f'f2 = {f2}')
 f3 = f1 + f2
 f4 = f1 * f2
 f5 = f1 - f2
-f6= f2
+
 print(f'f3 = {f3}')
 print(f'f4 = {f4}')
 print(f'f5 = {f5}')
-print(f'f6 = {f6}')
