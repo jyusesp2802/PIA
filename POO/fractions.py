@@ -60,6 +60,9 @@ class Fraction :
     def __add__(self, other: Fraction):
         return Fraction(self.__num * other.__den + other.__num * self.__den, self.__den * other.__den)
 
+    def __radd__(self, other):
+        return self + other
+
     def __sub__(self, other: Fraction):
         return self + (-other)
 
