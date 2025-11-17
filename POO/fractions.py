@@ -16,11 +16,9 @@ Fecha: 03/11/2025
 
 """
 
-from __future__ import annotations
-import math
-from typeguard import typechecked
 
-@typechecked
+import math
+
 class Fraction :
 
     def __init__(self, num, den):
@@ -52,7 +50,7 @@ class Fraction :
         return Fraction(self.__num * other.__num, self.__den * other.__den)
 
     def __rmul__(self, other):
-        return self*other
+        return self * other
 
     def __neg__(self):
         return self * -1
