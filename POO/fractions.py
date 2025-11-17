@@ -25,7 +25,8 @@ class Fraction :
 
     def __init__(self, num, den):
         if den == 0:
-            raise ValueError("Denominator cannot be zero.")
+            raise ZeroDivisionError("Denominator cannot be zero.")
+        # Simplificar la fracción
         mcd = math.gcd(num, den)
         self.__num = num // mcd
         self.__den = den // mcd
