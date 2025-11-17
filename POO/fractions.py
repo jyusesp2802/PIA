@@ -43,7 +43,7 @@ class Fraction :
         return f"{self.__num}/{self.__den}"
 
     def __repr__(self):
-        return f"{self.__class__.__name__}({self.__num, self.__den})"
+        return f"Fraction({self.__num, self.__den})"
 
 
     def __mul__(self, other: (int, Fraction)):
