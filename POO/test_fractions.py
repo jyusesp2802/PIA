@@ -1,13 +1,16 @@
 from fractions import Fraction
 
-d1 = Fraction(4, 3)
-d2 = Fraction(1, -2)
+f1 = Fraction(4, 3)
+f2 = Fraction(1, -2)
 
-print(f'd1 = {d1}')
-print(f'd2 = {d2}')
+print(f'f1 = {f1}')
+print(f'f2 = {f2}')
 
-d3 = d1 + d2
-d4 = d1 * d2
-
-print(f'd3 = {d3}')
-print(f'd4 = {d4}')
+f3 = f1 + f2
+f4 = f1 * f2
+f5 = f1 - f2
+f6= f2
+print(f'f3 = {f3}')
+print(f'f4 = {f4}')
+print(f'f5 = {f5}')
+print(f'f6 = {f6}')
