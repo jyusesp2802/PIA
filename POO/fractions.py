@@ -16,9 +16,10 @@ Fecha: 03/11/2025
 
 """
 
-
+from typeguard import typechecked
 import math
 
+@typechecked
 class Fraction :
 
     def __init__(self, num, den):
