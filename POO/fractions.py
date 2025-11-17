@@ -66,8 +66,8 @@ class Fraction :
     def __sub__(self, other: Fraction):
         return self + (-other)
 
-    def __truediv__(self, other: Fraction):
-        return Fraction(self.__num * other.__den, self.__den * other.__num)
+    def __rsub__(self, other):
+        return -self + other
 
     def __eq__(self, other: Fraction):
         return (self.__num, self.__den) == (other.__num, other.__den)
