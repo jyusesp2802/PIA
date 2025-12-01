@@ -5,8 +5,6 @@ Autor: Jaime Yust Espinosa
 
 """
 
-RETENCIONES = 0.15
-VALOR_TRIENIO = 30
 
 from typeguard import typechecked
 
@@ -14,7 +12,7 @@ from typeguard import typechecked
 class Nomina:
     total_nominas = 0
 
-    def __init__ (self, nombre:str, salario_base:int, trienios:int, valor_trienio = VALOR_TRIENIO, retenciones = RETENCIONES ):
+    def __init__ (self, nombre: str, salario_base: float, valor_trienio: float = 30.0 , retenciones: float = 0.15 ):
         if nombre == "":
             raise ValueError("El nombre no puede estar vacío")
         if salario_base >= 0:
@@ -24,9 +22,9 @@ class Nomina:
 
         self.__nombre_empleado = nombre
         self.__salario_base = salario_base
-        self.__trienios = trienios
+        self._trienios = 0
         self.__valor_trienio = valor_trienio
-        self._retenciones = retenciones
+        self.retenciones = retenciones
         Nomina.total_nominas += 1
 
     @property
@@ -44,6 +42,13 @@ class Nomina:
     @property
     def retenciones(self):
         return self.__retenciones
+
+    @retenciones.setter
+    def retenciones(self, value: float):
+        if value < 0 or value >= 0.5:
+            raise ValueError("Deben estar entre 0 y 0.5")
+        self.__retenciones = value
+
 
     def calcular_neto(self, neto):
         salario_total = self.__salario_base + (self.__trienios * self.__valor_trienio)
