@@ -17,18 +17,17 @@ class Nomina:
     def __init__ (self, nombre:str, salario_base:int, trienios:int, valor_trienio = VALOR_TRIENIO, retenciones = RETENCIONES ):
         if nombre == "":
             raise ValueError("El nombre no puede estar vacío")
-        if salario_base > 0:
-            raise ValueError("El salario base es > que 0")
-        if trienios >= 0:
-            raise ValueError("Los trienios tienen que ser >= que 0")
-        if (retenciones < 0) and (retenciones > 0.5):
-            raise ValueError("Las retenciones deben estar entre 0 y 0.5")
+        if salario_base >= 0:
+            raise ValueError("El salario base es >= que 0")
+        if valor_trienio <= 0:
+            raise ValueError("Los trienios tienen que ser <= que 0")
 
         self.__nombre_empleado = nombre
         self.__salario_base = salario_base
         self.__trienios = trienios
         self.__valor_trienio = valor_trienio
-        self.__retenciones = retenciones
+        self._retenciones = retenciones
+        Nomina.total_nominas += 1
 
     @property
     def nombre(self):
