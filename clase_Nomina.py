@@ -49,37 +49,50 @@ class Nomina:
             raise ValueError("Deben estar entre 0 y 0.5")
         self.__retenciones = value
 
+    @property
+    def salario_bruto(self):
+        bruto =elf.__salario_base + self.__trienios * self.__valor_trienio
+        return bruto
 
-    def calcular_neto(self, neto):
-        salario_total = self.__salario_base + (self.__trienios * self.__valor_trienio)
-        neto = salario_total * (1 - self.__retenciones)
-        return f"El salario neto es {neto}"
+    @property
+    def salario_neto(self):
+        neto = self.salario_bruto * (1-self.__retenciones)
+        return neto
 
     def incrementar_trienio(self):
-        self.__trienios =+ 1
+        self.__trienios += 1
 
 
     def modificar_salario(self, porcentaje:float):
-        porcentaje = input("Que porcentaje modificamos la nomina")
-        self.__salario_base = self.__salario_base + self.__salario_base * porcentaje
-        return
+       if porcentaje <= -1 or porcentaje > 1:
+           raise ValueError("El porcentaje deber estar entre -1 y 1 ")
+       self.__salario_base = porcentaje * self.__salario_base
 
     def __str__(self):
-        _str= (f"Su nombre es {self.__nombre_empleado}, "
+        str_ = (f"Su nombre es {self.__nombre_empleado}, "
                 f"su salario base es {self.__salario_base}, "
-                f"sus trienios son {self.__trienios} y tienen un valor de {self.__valor_trienio} €, "
-                f"su salario total antes de las retenciones es {"salario_total"} de €/mes,"
+                f"sus trienios son {self.__trienios} x {self.__valor_trienio} €, "
+                f"su salario total antes de las retenciones es {self.salario_bruto()} de €/mes,"
                 f"se le aplican {self.__retenciones} retenciones,"
-                f"tiene un salario neto de {"neto"} €/mes")
+                f"tiene un salario neto de {self.salario_neto()} €/mes")
+        return str_
 
-        return _str
+    def __eq__ (self, other: Nomina):
+        return self.salario_neto() == other.salario_neto()
+
+    def __lt__ (self, other: Nomina):
+        return self.salario_neto() < other.salario_neto()
+
+    def __gt__(self, other: Nomina):
+        return self.salario_neto() > other.salario_neto()
+
+    def __ge__ (self, other: Nomina):
+        return self == other or self > other
 
 
 
-class NominaA1(Nomina):
 
-    def __init__(self, nombre, retenciones):
-        super().__init__(nombre, salario_base = 2000,  valor_trienio = 50,  )
+
 
 
 
