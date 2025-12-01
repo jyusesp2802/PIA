@@ -5,7 +5,7 @@ Autor: Jaime Yust Espinosa
 
 """
 
-
+from __future__ import annotations
 from typeguard import typechecked
 
 @typechecked
@@ -88,6 +88,24 @@ class Nomina:
 
     def __ge__ (self, other: Nomina):
         return self == other or self > other
+
+    def __le__ (self, other: Nomina):
+        return self == other or self < other
+
+    def __ne__ (self, other: Nomina):
+        return not (self == other)
+
+    def __del__ (self, other: Nomina):
+        Nomina.total_nominas -= 1
+
+
+    class NominaA1(Nomina):
+
+        def __init__(self, nombre, retenciones):
+            super().__init__(nombre, salario_base=2000, valor_trienio=50, )
+
+
+
 
 
 
