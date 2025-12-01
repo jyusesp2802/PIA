@@ -1,6 +1,6 @@
 
 from typeguard import typechecked
-
+import math
 MAX_HEALTH = 100
 @typechecked
 class Armas :
